@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "Kanit-Regular";
+    src: url('./assets/fonts/kanit/Kanit-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: "Kanit-Light";
+    src: url('./assets/fonts/kanit/Kanit-Light.ttf');
+  }
+  
+  @font-face {
+    font-family: "Kanit-Bold";
+    src: url('./assets/fonts/kanit/Kanit-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: "Kanit-Medium";
+    src: url('./assets/fonts/kanit/Kanit-Medium.ttf');
+  }
+  
+  @font-face {
+    font-family: "Kanit-SemiBold";
+    src: url('./assets/fonts/kanit/Kanit-SemiBold.ttf');
+  }
+  
+  @font-face {
+    font-family: "Kanit-Thin";
+    src: url('./assets/fonts/kanit/Kanit-Thin.ttf');
+  }
+  
+  @font-face {
+    font-family: "Kanit-LightItalic";
+    src: url('./assets/fonts/kanit/Kanit-LightItalic.ttf');
+  }
+
+  * {
+    outline: none !important;
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  body {
+    font-family: "Kanit-Regular" !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+    color: black;
+  }
+
+  .product-img {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: 50% center;
+    background-repeat: no-repeat;
+  }
