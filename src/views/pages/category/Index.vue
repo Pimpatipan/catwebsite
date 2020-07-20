@@ -1,6 +1,6 @@
 <template>
   <CContainer class="m-auto box">
-    <CRow>
+    <!-- <CRow>
       <CCol class="p-0">
         <div>
           <div class="text-center">
@@ -26,63 +26,63 @@
           </div>
         </div>
       </CCol>
-    </CRow>
+    </CRow>-->
 
     <b-row>
       <b-col class="mt-5">
-        <h1 class="font-weight-bold mb-5 text-center">CATEGORY</h1>
-
+        <h1 class="font-weight-bold mb-5 text-center">{{name}}</h1>
+        <hr />
         <b-row class="mt-4">
           <b-col md="3" class="mb-2 mb-md-0">
-            <router-link to="/categorys">
-              <div class="pointer position-relative" @click="setCategoryName('คล้องหูผู้ใหญ่')">
+            <router-link to="/product">
+              <div class="pointer position-relative">
                 <div
-                  :style="{ backgroundImage: 'url(' + require('@/assets/images/คล้องหูผู้ใหญ่.jpg') + ')' }"
-                  class="product-img product-cat product"
+                  :style="{ backgroundImage: 'url(' + require('@/assets/images/673272.jpg') + ')' }"
+                  class="product-img product-cat"
                 >
                   <!-- <p>SHOP NOW</p> -->
                 </div>
                 <div class="card-text">
-                  <p class="font-weight-bold mt-3 mb-1">คล้องหูผู้ใหญ่</p>
+                  <p class="font-weight-bold mt-3 mb-1">สีฟ้า</p>
                 </div>
               </div>
             </router-link>
           </b-col>
           <b-col md="3" class="mb-2 mb-md-0">
-            <router-link to="/categorys">
-              <div class="pointer position-relative" @click="setCategoryName('สายคล้องคอผู้ใหญ่')">
+            <router-link to="/product">
+              <div class="pointer position-relative">
                 <div
-                  :style="{ backgroundImage: 'url(' + require('@/assets/images/สายคล้องคอผู้ใหญ่.jpg') + ')' }"
-                  class="product-img product-cat product"
+                  :style="{ backgroundImage: 'url(' + require('@/assets/images/673273.jpg') + ')' }"
+                  class="product-img product-cat"
                 ></div>
                 <div class="card-text">
-                  <p class="font-weight-bold mt-3 mb-1">สายคล้องคอผู้ใหญ่</p>
+                  <p class="font-weight-bold mt-3 mb-1">สีดำ</p>
                 </div>
               </div>
             </router-link>
           </b-col>
           <b-col md="3" class="mb-2 mb-md-0">
-            <router-link to="/categorys">
-              <div class="pointer position-relative" @click="setCategoryName('คล้องคอเด็ก')">
+            <router-link to="/product">
+              <div class="pointer position-relative">
                 <div
-                  :style="{ backgroundImage: 'url(' + require('@/assets/images/คล้องหูเด็ก.jpg') + ')' }"
-                  class="product-img product-cat product"
+                  :style="{ backgroundImage: 'url(' + require('@/assets/images/673274.jpg') + ')' }"
+                  class="product-img product-cat"
                 ></div>
                 <div class="card-text">
-                  <p class="font-weight-bold mt-3 mb-1">คล้องคอเด็ก</p>
+                  <p class="font-weight-bold mt-3 mb-1">สีแดง</p>
                 </div>
               </div>
             </router-link>
           </b-col>
           <b-col md="3" class="mb-2 mb-md-0">
-            <router-link to="/categorys">
-              <div class="pointer position-relative" @click="setCategoryName('สายคล้องคอเด็ก')">
+            <router-link to="/product">
+              <div class="pointer position-relative">
                 <div
-                  :style="{ backgroundImage: 'url(' + require('@/assets/images/สายคล้องคอเด็ก.jpg') + ')' }"
-                  class="product-img product-cat product"
+                  :style="{ backgroundImage: 'url(' + require('@/assets/images/673275.jpg') + ')' }"
+                  class="product-img product-cat"
                 ></div>
                 <div class="card-text">
-                  <p class="font-weight-bold mt-3 mb-1">สายคล้องคอเด็ก</p>
+                  <p class="font-weight-bold mt-3 mb-1">สีขาว</p>
                 </div>
               </div>
             </router-link>
@@ -116,12 +116,16 @@ export default {
         initialSlide: 0,
         autoplay: true,
         autoplaySpeed: 3000
-      }
+      },
+      name: ""
     };
   },
+  created() {
+    this.name = VueCookies.get("name");
+  },
   methods: {
-    setCategoryName(name) {
-      this.$cookies.set("name", name, 60 * 60 * 24 * 30);
+    showProduct(img, name) {
+      this.$refs.modalProduct.show(img, name);
     }
   }
 };

@@ -15,16 +15,16 @@ import "babel-polyfill";
 import "@/../node_modules/slick-carousel/slick/slick.css";
 import "@/../node_modules/slick-carousel/slick/slick-theme.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEnvelope,faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhoneAlt, faChevronUp, faChevronDown, faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
-  fab,
-  faFacebookF,
-  faInstagram,
-  faLine
+    fab,
+    faFacebookF,
+    faInstagram,
+    faLine
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faEnvelope,faPhoneAlt);
+library.add(faEnvelope, faPhoneAlt, faChevronUp, faChevronDown, faFilter);
 library.add(fab, faFacebookF, faInstagram, faLine);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
@@ -41,33 +41,33 @@ Vue.prototype.$formatDate = "DD MMM YYYY";
 Vue.prototype.$formatDateTime = "DD MMM YYYY HH:mm";
 Vue.prototype.$formatTime = "HH:mm";
 Vue.prototype.$headers = {
-  "API-KEY": "EC0mmErCeAp1KeY",
-  "Content-Type": "application/json",
-  culture: Vue.prototype.$language,
-  token: VueCookies.isKey("back_office_token") ? `Bearer ${VueCookies.get('back_office_token')}` : "null"
+    "API-KEY": "EC0mmErCeAp1KeY",
+    "Content-Type": "application/json",
+    culture: Vue.prototype.$language,
+    token: VueCookies.isKey("back_office_token") ? `Bearer ${VueCookies.get('back_office_token')}` : "null"
 }
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!VueCookies.get("back_office_token")) {
-      next({
-        path: "/login",
-      })
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if (!VueCookies.get("back_office_token")) {
+            next({
+                path: "/login",
+            })
+        } else {
+            next()
+        }
     } else {
-      next()
+        next()
     }
-  } else {
-    next()
-  }
 })
 
 new Vue({
-  el: '#app',
-  i18n,
-  router,
-  icons,
-  template: '<App/>',
-  components: {
-    App
-  },
+    el: '#app',
+    i18n,
+    router,
+    icons,
+    template: '<App/>',
+    components: {
+        App
+    },
 })

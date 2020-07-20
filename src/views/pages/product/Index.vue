@@ -39,89 +39,205 @@
           </b-col>
         </b-row>
 
-        <b-row class="mt-4">
-          <b-col cols="6" md="3">
-            <div class="pointer" @click="showProduct('673272.jpg','Product 1')">
-              <div
-                :style="{ backgroundImage: 'url(' + require('@/assets/images/673272.jpg') + ')' }"
-                class="product-img"
-              ></div>
-              <p class="font-weight-bold mt-3 mb-1">Product 1</p>
-              <p variant="dark" class="product-price">999 Baht</p>
-            </div>
-          </b-col>
-          <b-col cols="6" md="3">
-            <div class="pointer" @click="showProduct('673273.jpg','Product 2')">
-              <div
-                :style="{ backgroundImage: 'url(' + require('@/assets/images/673273.jpg') + ')' }"
-                class="product-img"
-              ></div>
-              <p class="font-weight-bold mt-3 mb-1">Product 2</p>
-              <p variant="dark" class="product-price">999 Baht</p>
-            </div>
-          </b-col>
-          <b-col cols="6" md="3">
-            <div class="pointer" @click="showProduct('673274.jpg','Product 3')">
-              <div
-                :style="{ backgroundImage: 'url(' + require('@/assets/images/673274.jpg') + ')' }"
-                class="product-img"
-              ></div>
-              <p class="font-weight-bold mt-3 mb-1">Product 3</p>
-              <p variant="dark" class="product-price">999 Baht</p>
-            </div>
-          </b-col>
-          <b-col cols="6" md="3">
-            <div class="pointer" @click="showProduct('673275.jpg','Product 4')">
-              <div
-                :style="{ backgroundImage: 'url(' + require('@/assets/images/673275.jpg') + ')' }"
-                class="product-img"
-              ></div>
-              <p class="font-weight-bold mt-3 mb-1">Product 4</p>
-              <p variant="dark" class="product-price">999 Baht</p>
-            </div>
-          </b-col>
-        </b-row>
+        <b-row>
+          <b-col md="3">
+            <b-button
+              v-b-toggle.collapse-filter
+              class="category-collapse justify-content-center btn-filter d-md-none"
+            >
+              <span>
+                <font-awesome-icon icon="filter" title="filter-btn" class="mr-2" />Filter
+              </span>
+            </b-button>
 
-        <b-row class="mt-4">
-          <b-col cols="6" md="3">
-            <div class="pointer" @click="showProduct('673276.jpg','Product 5')">
-              <div
-                :style="{ backgroundImage: 'url(' + require('@/assets/images/673276.jpg') + ')' }"
-                class="product-img"
-              ></div>
-              <p class="font-weight-bold mt-3 mb-1">Product 5</p>
-              <p variant="dark" class="product-price">999 Baht</p>
-            </div>
+            <b-collapse id="collapse-filter" class="mt-2" v-model="visible">
+              <b-button v-b-toggle.collapse-1 class="category-collapse">
+                คล้องหูผู้ใหญ่
+                <font-awesome-icon icon="chevron-up" class="mt-1" />
+                <font-awesome-icon icon="chevron-down" class="mt-1" />
+              </b-button>
+              <b-collapse id="collapse-1" class="mt-2">
+                <b-card>
+                  <a href="#" class="category-list-txt">
+                    สีฟ้า
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <a href="#" class="category-list-txt">
+                    สีชมพู
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <a href="#" class="category-list-txt">
+                    สีดำ
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <hr />
+                </b-card>
+              </b-collapse>
+
+              <b-button v-b-toggle.collapse-2 class="category-collapse">
+                สายคล้องคอผู้ใหญ่
+                <font-awesome-icon icon="chevron-up" class="mt-1" />
+                <font-awesome-icon icon="chevron-down" class="mt-1" />
+              </b-button>
+              <b-collapse id="collapse-2" class="mt-2">
+                <b-card>
+                  <a href="#" class="category-list-txt">
+                    สีฟ้า
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <a href="#" class="category-list-txt">
+                    สีชมพู
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <a href="#" class="category-list-txt">
+                    สีดำ
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <hr />
+                </b-card>
+              </b-collapse>
+
+              <b-button v-b-toggle.collapse-3 class="category-collapse">
+                คล้องหูเด็ก
+                <font-awesome-icon icon="chevron-up" class="mt-1" />
+                <font-awesome-icon icon="chevron-down" class="mt-1" />
+              </b-button>
+              <b-collapse id="collapse-3" class="mt-2">
+                <b-card>
+                  <a href="#" class="category-list-txt">
+                    สีฟ้า
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <a href="#" class="category-list-txt">
+                    สีชมพู
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <a href="#" class="category-list-txt">
+                    สีดำ
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <hr />
+                </b-card>
+              </b-collapse>
+
+              <b-button v-b-toggle.collapse-4 class="category-collapse">
+                สายคล้องคอเด็ก
+                <font-awesome-icon icon="chevron-up" class="mt-1" />
+                <font-awesome-icon icon="chevron-down" class="mt-1" />
+              </b-button>
+              <b-collapse id="collapse-4" class="mt-2">
+                <b-card>
+                  <a href="#" class="category-list-txt">
+                    สีฟ้า
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <a href="#" class="category-list-txt">
+                    สีชมพู
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <a href="#" class="category-list-txt">
+                    สีดำ
+                    <span class="text-right">(1)</span>
+                  </a>
+                  <hr />
+                </b-card>
+              </b-collapse>
+            </b-collapse>
           </b-col>
-          <b-col cols="6" md="3">
-            <div class="pointer" @click="showProduct('673277.jpg','Product 6')">
-              <div
-                :style="{ backgroundImage: 'url(' + require('@/assets/images/673277.jpg') + ')' }"
-                class="product-img"
-              ></div>
-              <p class="font-weight-bold mt-3 mb-1">Product 6</p>
-              <p variant="dark" class="product-price">999 Baht</p>
-            </div>
-          </b-col>
-          <b-col cols="6" md="3">
-            <div class="pointer" @click="showProduct('673278.jpg','Product 7')">
-              <div
-                :style="{ backgroundImage: 'url(' + require('@/assets/images/673278.jpg') + ')' }"
-                class="product-img"
-              ></div>
-              <p class="font-weight-bold mt-3 mb-1">Product 7</p>
-              <p variant="dark" class="product-price">999 Baht</p>
-            </div>
-          </b-col>
-          <b-col cols="6" md="3">
-            <div class="pointer" @click="showProduct('673279.jpg','Product 8')">
-              <div
-                :style="{ backgroundImage: 'url(' + require('@/assets/images/673279.jpg') + ')' }"
-                class="product-img"
-              ></div>
-              <p class="font-weight-bold mt-3 mb-1">Product 8</p>
-              <p variant="dark" class="product-price">999 Baht</p>
-            </div>
+          <b-col md="9">
+            <b-row class="mt-4">
+              <b-col cols="6" md="3">
+                <div class="pointer" @click="showProduct('673272.jpg','Product 1')">
+                  <div
+                    :style="{ backgroundImage: 'url(' + require('@/assets/images/673272.jpg') + ')' }"
+                    class="product-img shadow product"
+                  ></div>
+                  <div class="tag">คล้องหูผู้ใหญ่</div>
+                  <p class="font-weight-bold mb-1">Product 1</p>
+                  <p variant="dark" class="product-price">999 Baht</p>
+                </div>
+              </b-col>
+              <b-col cols="6" md="3">
+                <div class="pointer" @click="showProduct('673273.jpg','Product 2')">
+                  <div
+                    :style="{ backgroundImage: 'url(' + require('@/assets/images/673273.jpg') + ')' }"
+                    class="product-img shadow product"
+                  ></div>
+                  <div class="tag">คล้องหูผู้ใหญ่</div>
+                  <p class="font-weight-bold mb-1">Product 2</p>
+                  <p variant="dark" class="product-price">999 Baht</p>
+                </div>
+              </b-col>
+              <b-col cols="6" md="3">
+                <div class="pointer" @click="showProduct('673274.jpg','Product 3')">
+                  <div
+                    :style="{ backgroundImage: 'url(' + require('@/assets/images/673274.jpg') + ')' }"
+                    class="product-img shadow product"
+                  ></div>
+                  <div class="tag">คล้องหูผู้ใหญ่</div>
+                  <p class="font-weight-bold mb-1">Product 3</p>
+                  <p variant="dark" class="product-price">999 Baht</p>
+                </div>
+              </b-col>
+              <b-col cols="6" md="3">
+                <div class="pointer" @click="showProduct('673275.jpg','Product 4')">
+                  <div
+                    :style="{ backgroundImage: 'url(' + require('@/assets/images/673275.jpg') + ')' }"
+                    class="product-img shadow product"
+                  ></div>
+                  <div class="tag">คล้องหูผู้ใหญ่</div>
+                  <p class="font-weight-bold mb-1">Product 4</p>
+                  <p variant="dark" class="product-price">999 Baht</p>
+                </div>
+              </b-col>
+            </b-row>
+
+            <b-row class="mt-4">
+              <b-col cols="6" md="3">
+                <div class="pointer" @click="showProduct('673276.jpg','Product 5')">
+                  <div
+                    :style="{ backgroundImage: 'url(' + require('@/assets/images/673276.jpg') + ')' }"
+                    class="product-img shadow product"
+                  ></div>
+                  <div class="tag">คล้องหูผู้ใหญ่</div>
+                  <p class="font-weight-bold mb-1">Product 5</p>
+                  <p variant="dark" class="product-price">999 Baht</p>
+                </div>
+              </b-col>
+              <b-col cols="6" md="3">
+                <div class="pointer" @click="showProduct('673277.jpg','Product 6')">
+                  <div
+                    :style="{ backgroundImage: 'url(' + require('@/assets/images/673277.jpg') + ')' }"
+                    class="product-img shadow product"
+                  ></div>
+                  <div class="tag">คล้องหูผู้ใหญ่</div>
+                  <p class="font-weight-bold mb-1">Product 6</p>
+                  <p variant="dark" class="product-price">999 Baht</p>
+                </div>
+              </b-col>
+              <b-col cols="6" md="3">
+                <div class="pointer" @click="showProduct('673278.jpg','Product 7')">
+                  <div
+                    :style="{ backgroundImage: 'url(' + require('@/assets/images/673278.jpg') + ')' }"
+                    class="product-img shadow product"
+                  ></div>
+                  <div class="tag">คล้องหูผู้ใหญ่</div>
+                  <p class="font-weight-bold mb-1">Product 7</p>
+                  <p variant="dark" class="product-price">999 Baht</p>
+                </div>
+              </b-col>
+              <b-col cols="6" md="3">
+                <div class="pointer" @click="showProduct('673279.jpg','Product 8')">
+                  <div
+                    :style="{ backgroundImage: 'url(' + require('@/assets/images/673279.jpg') + ')' }"
+                    class="product-img shadow product"
+                  ></div>
+                  <div class="tag">คล้องหูผู้ใหญ่</div>
+                  <p class="font-weight-bold mb-1">Product 8</p>
+                  <p variant="dark" class="product-price">999 Baht</p>
+                </div>
+              </b-col>
+            </b-row>
           </b-col>
         </b-row>
       </b-col>
@@ -153,6 +269,8 @@ export default {
         autoplaySpeed: 3000
       },
       selected: 1,
+      visible: true,
+      screenSize: 0,
       options: [
         { value: "1", text: "Featured" },
         { value: "2", text: "Best Selling" },
@@ -165,7 +283,16 @@ export default {
       ]
     };
   },
+  created: async function() {
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
+  },
   methods: {
+    handleResize() {
+      this.screenSize = window.innerWidth;
+      if (this.screenSize > 767) this.visible = true;
+      else this.visible = false;
+    },
     showProduct(img, name) {
       this.$refs.modalProduct.show(img, name);
     }

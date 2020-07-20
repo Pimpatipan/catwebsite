@@ -36,7 +36,7 @@
               <p class="m-0">Email : example@gmail.com</p>
             </div>
           </b-col>
-          <b-col sm="6" md="4">
+          <b-col sm="6" md="2">
             <p class="title mb-2">Follow Us</p>
             <div>
               <a href="#" target="_blank">
@@ -48,6 +48,23 @@
               <a href="#" target="_blank">
                 <font-awesome-icon :icon="['fab', 'line']" class="icon-social align-middle" />
               </a>
+            </div>
+          </b-col>
+          <b-col md="4" class="text-center mt-5 mt-md-0">
+            <div
+              class="fb-page"
+              data-href="https://www.facebook.com/cat1811/"
+              data-tabs="timeline"
+              data-width
+              data-height="275"
+              data-small-header="false"
+              data-adapt-container-width="true"
+              data-hide-cover="false"
+              data-show-facepile="true"
+            >
+              <blockquote cite="https://www.facebook.com/cat1811/" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/cat1811/">หน้ากาก ผ้าปิดจมูก by cat</a>
+              </blockquote>
             </div>
           </b-col>
         </b-row>
